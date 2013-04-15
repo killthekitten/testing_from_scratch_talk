@@ -1,0 +1,3 @@
+#!/bin/bash
+keydown slides slides.md
+launchy ./slides.html
