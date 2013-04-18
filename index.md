@@ -179,6 +179,20 @@ end
 
 # specs/models/concerns
 
+```ruby
+require 'spec_helper'
+
+class HasMatcher::Test
+  include ActiveModel::Model
+  include ActiveModel::Validations
+  include HasMatcher
+
+  attr_accessor :matcher_text
+end
+
+describe HasMatcher do
+...
+```
 !SLIDE left
 
 # specs/controllers

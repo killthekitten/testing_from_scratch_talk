@@ -268,12 +268,15 @@
       <div class='spacer bottom'></div>
     </section>
     <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <h1>specs/models/concerns</h1>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>specs/models/concerns</h1>
+    
+    <p><textarea class='code' display='none' mode='ruby'>require 'spec_helper'&#x000A;&#x000A;class HasMatcher::Test&#x000A;  include ActiveModel::Model&#x000A;  include ActiveModel::Validations&#x000A;  include HasMatcher&#x000A;&#x000A;  attr_accessor :matcher_text&#x000A;end&#x000A;&#x000A;describe HasMatcher do&#x000A;...</textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
     <section class='left slide'>
       <div class='spacer top'></div>
       <div class='content'>
