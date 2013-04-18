@@ -104,8 +104,20 @@ body {
       -moz-box-pack: start;
       -ms-box-pack: start;
       box-pack: start; }
-      .keydown.deck-container .slide.full-background.test {
-        background-image: url(../images/test.png); }
+      .keydown.deck-container .slide.full-background.railsguides {
+        background-image: url(../images/railsguides.png); }
+      .keydown.deck-container .slide.full-background.patsan {
+        background-image: url(../images/patsan.png); }
+      .keydown.deck-container .slide.full-background.bablo {
+        background-image: url(../images/bablo.jpg); }
+      .keydown.deck-container .slide.full-background.success {
+        background-image: url(../images/success.png); }
+      .keydown.deck-container .slide.full-background.success2 {
+        background-image: url(../images/success2.jpg); }
+      .keydown.deck-container .slide.full-background.rescue {
+        background-image: url(../images/rescue.jpg); }
+      .keydown.deck-container .slide.full-background.simplecov {
+        background-image: url(../images/simplecov.png); }
       .keydown.deck-container .slide.full-background h1 {
         display: inline;
         position: absolute;

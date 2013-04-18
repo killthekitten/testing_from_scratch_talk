@@ -34,19 +34,188 @@
       <div class='spacer bottom'></div>
     </section>
     <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>@killthekitten</h1>
+        
+        <h2>Николай Шебанов</h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='bottom-left full-background railsguides slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Тесты естественны для RoR</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>И тем не менее...</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='full-background left patsan slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Зачем?</h1>
+        
+        <h2>...нужны тесты, если можно и без них</h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='bablo bottom-left full-background slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Тесты экономят $$$</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Тогда почему их нет?</h1>
+        
+        <h2>(тестов)</h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='left slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Тестов нет потому, что:</h1>
+        
+        <ol>
+        <li>"Есть задачи поважнее"</li>
+        <li>Мешают на стадии прототипа</li>
+        <li>Команда не имеет опыта тестирования</li>
+        <li>...</li>
+        </ol>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='left slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Как результат, с каждым новым релизом:</h1>
+        
+        <ol>
+        <li>Больнее выкатывать релиз</li>
+        <li>Дольше разрабатывать новые фичи</li>
+        <li>Труднее рефакторить</li>
+        <li>Тесты откладываются в самый дальний ящик</li>
+        </ol>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='bottom-left full-background slide success'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Бизнес теряет деньги</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='bottom-right full-background slide success2'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Программист теряет работу</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='full-background rescue slide top-left'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Надо спасать ситуацию</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='left slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Работа над ошибками</h1>
+        
+        <ul>
+        <li>Спеки - не доп. задача, спеки - часть задачи</li>
+        <li>Долго пишет спеки тот, кто делает это плохо</li>
+        <li>"Потом допишу" Driven Development</li>
+        <li>Нужно менять воркфлоу</li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='left slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Фигакс-фигакс и в продакшн</h1>
+        
+        <ul>
+        <li>Читаем условия задачи</li>
+        <li>Коммитим решение</li>
+        <li>...</li>
+        <li>PROFIT</li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='left slide'>
   <div class='spacer top'></div>
   <div class='content'>
-    <h1>Some sample code</h1>
+    <h1>Делаем по науке</h1>
 
-<p><textarea class='code' display='none' mode='ruby'>def method&#x000A;  puts "Hello, World"&#x000A;end</textarea>
+<ul>
+<li>Читаем условия задачи</li>
+<li><strong>Пишем тесты</strong></li>
+<li>Коммитим <strong>протестированное</strong> решение</li>
+<li><strong>Code Review + CI Server</strong></li>
+<li>...</li>
+<li>PROFIT</li>
+</ul>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>Инструментарий</h1>
+    
+    <p><textarea class='code' display='none' mode='ruby'>group :test, :development do&#x000A;  gem 'factory_girl'&#x000A;  gem 'factory_girl_rails'&#x000A;  gem 'rspec-rails'&#x000A;  #gem 'capybara'&#x000A;  #gem 'capybara-webkit'&#x000A;  gem 'rr'&#x000A;  gem 'simplecov', require: false&#x000A;  gem 'shoulda'&#x000A;  gem 'webmock'&#x000A;  gem 'simplecov', require: false&#x000A;end&#x000A;&#x000A;group :development do&#x000A;  gem 'guard-rspec'&#x000A;  gem 'terminal-notifier-guard'&#x000A;end</textarea>
 </p>
   </div>
   <div class='spacer bottom'></div>
 </section>
-    <section class='full-background slide test'>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>simplecov</h1>
+    
+    <p><textarea class='code' display='none' mode='ruby'>if ENV['RCOV']&#x000A;  require 'simplecov'&#x000A;  SimpleCov.start&#x000A;end</textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='full-background simplecov slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>With a Background Image</h1>
+        
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Спасибо!</h1>
+        
+        <h2>Вопросы?</h2>
+        
+        <h2>@killthekitten, <a href="http://killtekitten.github.io/testing_from_scratch_talk/">http://killthekitten.github.io/testing_from_scratch_talk/</a></h2>
       </div>
       <div class='spacer bottom'></div>
     </section>
