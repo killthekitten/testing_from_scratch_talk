@@ -104,6 +104,12 @@
 
 !SLIDE
 
+# Средняя температура по больнице
+
+## Команда должна иметь примеры написания (всяких) спек
+
+!SLIDE
+
 # Инструментарий
 
 ``` ruby
@@ -143,10 +149,162 @@ end
 
 !SLIDE
 
+# Что тестируем?
+## Helpers + Controllers + Models
+
+!SLIDE
+
+# Request Specs
+## Очень эффективные, но медленные и проблемные
+### Лучше иметь специально обученного человека
+
+!SLIDE
+
+# JS Testing
+## Аналогично, эффективные и проблемные
+
+!SLIDE left
+
+# specs/models
+
+* стейт машины
+* валидации
+  * should be_valid
+  * should have(n).errors_on
+  * match error message
+* константы
+* shoulda
+
+!SLIDE
+
+# specs/models/concerns
+
+!SLIDE left
+
+# specs/controllers
+
+## Плюсы
++ максимально простые и эффективные
++ однотипные
++ прикрывают большое количество тылов: создание объекта, отображение, права доступа и т.п.
++ есть сессия и вьюха
+
+!SLIDE left
+
+# specs/controllers
+
+## Минусы
+- нет редиректов
+- ничего не знают о JS
+- ничего не знают о кнопках
+
+!SLIDE
+
+# specs/mailers
+
+!SLIDE
+
+# spec/models/helpers
+
++ Большое покрытие вьюхи
+- Скорее всего, надо покрывать много условий
+
+!SLIDE
+
+# ability_spec.rb
+
+!SLIDE
+
+# Сторонние сервисы, API, OAuth
+
++ Искать стабы в README
++ webmock
+
+!SLIDE
+
+# Mailers, Async Workers
+
+!SLIDE
+
+# FactoryGirl
+
+!SLIDE
+
+# FactoryGirl
+## Тоже нужно тестить
+
+```ruby
+# spec/factories_spec.rb
+
+FactoryGirl.factories.map(&:name).each do |factory_name|
+  describe "The #{factory_name} factory" do
+    it 'is valid' do
+      build(factory_name).should be_valid
+    end
+  end
+end
+```
+
+```ruby
+# Rakefile
+
+desc 'Run factory specs.'
+RSpec::Core::RakeTask.new(:factory_specs) do |t|
+  t.pattern = './spec/factories_spec.rb'
+end
+
+task spec: :factory_specs
+```
+
+!SLIDE
+
+# RSpec
+
++ let/set, ленивая загрузка
++ стабы, моки
++ spec_helper
++ синтаксический сахар
++ ссылка на документашку
+
+!SLIDE
+
+# RR
+
+```ruby
+# Flexmock
+flexmock(User).should_receive(:find).with('42').and_return(jane)
+# RSpec
+User.should_receive(:find).with('42').and_return(jane)
+# Mocha
+User.expects(:find).with('42').returns { jane }
+# rspec-mocks (using return value blocks)
+User.should_receive(:find).with('42') { jane }
+# RR
+mock(User).find('42') { jane }
+```
+
+!SLIDE left
+
+# Самостоятельное изучение для коллег
+
+* codeschool.com/courses/rails-testing-for-zombies
+* codeschool.com/courses/testing-with-rspec
+* betterspecs.org (github.com/andreareginato/betterspecs/issues/20)
+* betterspecs.org/#resources
+
+!SLIDE left
+
+# Займемся списыванием
+
+* github.com/rails/rails
+* github.com/gitlabhq/gitlabhq
+* github.com/infews/keydown
+* github.com/spree/spree
+* github.com/errbit/errbit
+* Любой большой опенсорс тоже подойдет
+
+!SLIDE
+
 # Спасибо!
 ## Вопросы?
-## @killthekitten, [http://killthekitten.github.io/testing_from_scratch_talk/](http://killtekitten.github.io/testing_from_scratch_talk/)
-
-!NOTES
-
- * a note
+## @killthekitten, [http://killthekitten.ru/testing_from_scratch_talk/](http://killtekitten.ru/testing_from_scratch_talk/)

@@ -182,6 +182,15 @@
   <div class='spacer bottom'></div>
 </section>
     <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Средняя температура по больнице</h1>
+        
+        <h2>Команда должна иметь примеры написания (всяких) спек</h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
   <div class='spacer top'></div>
   <div class='content'>
     <h1>Инструментарий</h1>
@@ -211,11 +220,221 @@
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
+        <h1>Что тестируем?</h1>
+        
+        <h2>Helpers + Controllers + Models</h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Request Specs</h1>
+        
+        <h2>Очень эффективные, но медленные и проблемные</h2>
+        
+        <h3>Лучше иметь специально обученного человека</h3>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>JS Testing</h1>
+        
+        <h2>Аналогично, эффективные и проблемные</h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='left slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>specs/models</h1>
+        
+        <ul>
+        <li>стейт машины</li>
+        <li>валидации
+        
+        <ul>
+        <li>should be_valid</li>
+        <li>should have(n).errors_on</li>
+        <li>match error message</li>
+        </ul>
+        </li>
+        <li>константы</li>
+        <li>shoulda</li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>specs/models/concerns</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='left slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>specs/controllers</h1>
+        
+        <h2>Плюсы</h2>
+        
+        <ul>
+        <li>максимально простые и эффективные</li>
+        <li>однотипные</li>
+        <li>прикрывают большое количество тылов: создание объекта, отображение, права доступа и т.п.</li>
+        <li>есть сессия и вьюха</li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='left slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>specs/controllers</h1>
+        
+        <h2>Минусы</h2>
+        
+        <ul>
+        <li>нет редиректов</li>
+        <li>ничего не знают о JS</li>
+        <li>ничего не знают о кнопках</li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>specs/mailers</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>spec/models/helpers</h1>
+        
+        <ul>
+        <li>Большое покрытие вьюхи</li>
+        <li>Скорее всего, надо покрывать много условий</li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>ability_spec.rb</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Сторонние сервисы, API, OAuth</h1>
+        
+        <ul>
+        <li>Искать стабы в README</li>
+        <li>webmock</li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Mailers, Async Workers</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>FactoryGirl</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>FactoryGirl</h1>
+    
+    <h2>Тоже нужно тестить</h2>
+    
+    <p><textarea class='code' display='none' mode='ruby'># spec/factories_spec.rb&#x000A;&#x000A;FactoryGirl.factories.map(&:name).each do |factory_name|&#x000A;  describe "The #{factory_name} factory" do&#x000A;    it 'is valid' do&#x000A;      build(factory_name).should be_valid&#x000A;    end&#x000A;  end&#x000A;end</textarea>
+</p>
+    
+    <p><textarea class='code' display='none' mode='ruby'># Rakefile&#x000A;&#x000A;desc 'Run factory specs.'&#x000A;RSpec::Core::RakeTask.new(:factory_specs) do |t|&#x000A;  t.pattern = './spec/factories_spec.rb'&#x000A;end&#x000A;&#x000A;task spec: :factory_specs</textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>RSpec</h1>
+        
+        <ul>
+        <li>let/set, ленивая загрузка</li>
+        <li>стабы, моки</li>
+        <li>spec_helper</li>
+        <li>синтаксический сахар</li>
+        <li>ссылка на документашку</li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>RR</h1>
+    
+    <p><textarea class='code' display='none' mode='ruby'># Flexmock&#x000A;flexmock(User).should_receive(:find).with('42').and_return(jane)&#x000A;# RSpec&#x000A;User.should_receive(:find).with('42').and_return(jane)&#x000A;# Mocha&#x000A;User.expects(:find).with('42').returns { jane }&#x000A;# rspec-mocks (using return value blocks)&#x000A;User.should_receive(:find).with('42') { jane }&#x000A;# RR&#x000A;mock(User).find('42') { jane }</textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='left slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>Самостоятельное изучение для коллег</h1>
+
+<ul>
+<li>codeschool.com/courses/rails-testing-for-zombies</li>
+<li>codeschool.com/courses/testing-with-rspec</li>
+<li>betterspecs.org (github.com/andreareginato/betterspecs/issues/20)</li>
+<li>betterspecs.org/#resources</li>
+</ul>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='left slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>Займемся списыванием</h1>
+
+<ul>
+<li>github.com/rails/rails</li>
+<li>github.com/gitlabhq/gitlabhq</li>
+<li>github.com/infews/keydown</li>
+<li>github.com/spree/spree</li>
+<li>github.com/errbit/errbit</li>
+<li>Любой большой опенсорс тоже подойдет</li>
+</ul>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
         <h1>Спасибо!</h1>
         
         <h2>Вопросы?</h2>
         
-        <h2>@killthekitten, <a href="http://killtekitten.github.io/testing_from_scratch_talk/">http://killthekitten.github.io/testing_from_scratch_talk/</a></h2>
+        <h2>@killthekitten, <a href="http://killtekitten.ru/testing_from_scratch_talk/">http://killthekitten.ru/testing_from_scratch_talk/</a></h2>
       </div>
       <div class='spacer bottom'></div>
     </section>
